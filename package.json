@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/fezde/silkflowerapi/issues"
   },
-  "homepage": "https://github.com/fezde/silkflowerapi#readme"
+  "homepage": "https://github.com/fezde/silkflowerapi#readme",
+  "dependencies": {
+    "jsdom": "^19.0.0",
+    "node-p5": "^1.0.4"
+  }
 }
