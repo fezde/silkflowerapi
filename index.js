@@ -4,9 +4,9 @@ const p5 = require('node-p5');
 
 const drawFlower = (p) => {
     p.background(
-        p5.random(50, 255),
-        p5.random(50, 255),
-        p5.random(50, 255)
+        p.random(50, 255),
+        p.random(50, 255),
+        p.random(50, 255)
     );
     p.text('hello world!', 50, 100);
 }
