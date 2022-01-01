@@ -1,4 +1,6 @@
 const p5 = require('node-p5');
+const fs = require("fs");
+const pngToJpeg = require('png-to-jpeg');
 
 class Path {
     constructor(p) {
@@ -113,8 +115,12 @@ function sketch(p) {
         drawFlower(p);
         console.log("Done drawing")
 
-        p.saveCanvas(canvas, 'build/flower', 'jpg').then(filename => {
-            console.log(`saved the canvas as ${filename}`);
+        p.saveCanvas(canvas, 'build/flower', 'png').then(filename => {
+            console.log(`Saved the canvas as ${filename}`);
+
+            let buffer = fs.readFileSync("build/flower.png");
+            pngToJpeg({ quality: 80 })(buffer)
+                .then(output => fs.writeFileSync("build/flower.jpg", output));
         });
         p.noLoop();
     }

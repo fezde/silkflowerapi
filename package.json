@@ -18,6 +18,7 @@
   "homepage": "https://github.com/fezde/silkflowerapi#readme",
   "dependencies": {
     "jsdom": "^19.0.0",
-    "node-p5": "^1.0.4"
+    "node-p5": "^1.0.4",
+    "png-to-jpeg": "^1.0.1"
   }
 }
