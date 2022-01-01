@@ -1,0 +1,19 @@
+{
+  "name": "silkflowerapi",
+  "version": "1.0.0",
+  "description": "Geneate SilkFlowers to be used in an API",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fezde/silkflowerapi.git"
+  },
+  "author": "",
+  "license": "XXX",
+  "bugs": {
+    "url": "https://github.com/fezde/silkflowerapi/issues"
+  },
+  "homepage": "https://github.com/fezde/silkflowerapi#readme"
+}
