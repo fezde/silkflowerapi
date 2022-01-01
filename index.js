@@ -77,8 +77,8 @@ const drawFlower = (p) => {
         }
     }
 
-    p.stroke(red, green, blue, 10);
-    p.fill(red, green, blue, 10);
+    p.stroke(red, green, blue, 5);
+    p.fill(red, green, blue, 50);
 
     // Define inner Lines
     goalOffset = [];
@@ -87,7 +87,7 @@ const drawFlower = (p) => {
         goalOffset.push(p.random(0.3, 0.7));
     }
 
-    for (var t = 0; t < 1; t += 0.0001) {
+    for (var t = 0; t < 1; t += 0.0004) {
         const p1 = path.getAt(t);
         p.circle(p1.x * 1024, p1.y * 1024, 5);
 
@@ -106,6 +106,7 @@ const drawFlower = (p) => {
 
 function sketch(p) {
     p.setup = () => {
+        p.angleMode(p.DEGREES);
         let canvas = p.createCanvas(1024, 1024);
 
         console.log("Start drawing")
