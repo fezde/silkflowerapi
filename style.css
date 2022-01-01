@@ -1,0 +1,54 @@
+body{
+    font-family: 'Roboto', sans-serif;
+    
+}
+h1,h2,h3,h4{
+    font-weight: 900;
+}
+h1 {
+    text-align: center;
+}
+
+.row {
+    margin-top: 2em;
+    display: inline-block;
+}
+.col{
+    width: 45vw;
+    max-width: 45vw;
+    min-width: 45vw;
+    float: left;
+    margin: 0 1vw 0 2vw;
+}
+
+.brand{
+    height: 1em;
+}
+
+li{
+    line-height: 1.9em;
+}
+
+code{
+    border: 1px solid grey;
+    background: #ffcccc;
+    margin-right: 1em;
+}
+
+@media (max-width: 600px) {
+    h1,h2,h3 {
+        text-align: center;
+    }
+
+    .col{
+        width: 100%;
+        min-width: 100%;
+        max-width: 100%;
+    }
+    p.mobile-center{
+        text-align: center;
+    }
+    img{
+        margin:auto;
+    }
+}
