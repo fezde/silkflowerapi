@@ -30,21 +30,17 @@ class Path {
         const numberOfIntervals = this.points.length - 2 - 1;
         const lengthOfInterval = 1 / numberOfIntervals;
 
-        var currentInterval = int(t / lengthOfInterval);
+        var currentInterval = Math.floor(t / lengthOfInterval);
         if (currentInterval >= numberOfIntervals) {
             currentInterval = numberOfIntervals - 1;
         }
 
-        // console.log(t, currentInterval)
-
-        //TODO start index needs to be calculated
         const startIndex = currentInterval + 1;
         const prev = this.points[startIndex - 1];
         const p1 = this.points[startIndex];
         const p2 = this.points[startIndex + 1];
         const next = this.points[startIndex + 2];
 
-        //TODO t needs to be scales to interval lenght
         var tInInterval = (t - (currentInterval * lengthOfInterval)) / lengthOfInterval;
         const x = this.p.curvePoint(prev.x, p1.x, p2.x, next.x, tInInterval);
         const y = this.p.curvePoint(prev.y, p1.y, p2.y, next.y, tInInterval);
@@ -55,7 +51,6 @@ class Path {
 
 
 const drawFlower = (p) => {
-    console.log("FEZ")
     p.background(255);
     var path = new Path(p);
 
@@ -83,17 +78,18 @@ const drawFlower = (p) => {
     }
 
     p.stroke(red, green, blue, 10);
-    p.fill(red, green, blue, 100 / sizeMultiplier);
+    p.fill(red, green, blue, 10);
 
     // Define inner Lines
     goalOffset = [];
-    for (var i = 0; i < int(p.random(2, 10)); i++) {
+    const numberOfOffsets = Math.floor(p.random(2, 10));
+    for (var i = 0; i < numberOfOffsets; i++) {
         goalOffset.push(p.random(0.3, 0.7));
     }
 
-    for (var t = 0; t < 1; t += 0.01) {
+    for (var t = 0; t < 1; t += 0.0001) {
         const p1 = path.getAt(t);
-        p.circle(p1.x * imgHeight, p1.y * imgHeight, sizeMultiplier * 5);
+        p.circle(p1.x * 1024, p1.y * 1024, 5);
 
         for (var offset of goalOffset) {
 
@@ -102,7 +98,7 @@ const drawFlower = (p) => {
                 tGoal--;
             }
             var p2 = path.getAt(tGoal);
-            p.line(p1.x * imgHeight, p1.y * imgHeight, p2.x * imgHeight, p2.y * imgHeight)
+            p.line(p1.x * 1024, p1.y * 1024, p2.x * 1024, p2.y * 1024)
         }
     }
 }
